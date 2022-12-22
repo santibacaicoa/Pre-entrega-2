@@ -1,5 +1,9 @@
 * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
     font-size: 16px;
+    font-weight: 300;
 }
 
 body {
@@ -12,6 +16,8 @@ body {
 /* Inicio header (parar todas las páginas)*/
 
 header {
+    z-index: 1000;
+    position: relative;
     height: fit-content;
     background-color: #333;
     color: white;
@@ -23,12 +29,12 @@ header {
     text-decoration: none;
     color: white;
     font-size: 1.3rem;
+    font-weight: 300;
     transition: all 0.4s;
 }
 
 .link-header:hover {
-    color: rgb(204, 46, 67);
-    font-size: 1.35rem;
+    color: rgb(197, 122, 68);
 }
 
 .ul-header {
@@ -58,15 +64,241 @@ header {
 
 /* cierre header */
 
+/* apertura menu mobile */
+
+#nav-mobile {
+    height: 10%;
+    width: 100%;
+    position: relative;
+    z-index: 999;
+    background-color: #333;
+    display: none;
+    padding: 1% 17% 1% 5%;
+}
+
+.nav-menu {
+    display: none;
+}
+
+.nav-menu ul {
+    list-style-type: none;
+    padding: 0;
+    margin-top: 0.5rem;
+}
+
+.nav-menu li {
+    padding: 0.5rem;
+}
+
+.nav-menu a {
+    color: white;
+    text-decoration: none;
+}
+
+.nav-input {
+    display: none;
+}
+
+.nav-input:checked + .nav-menu {
+    display: block;
+}
+
+/* cierre menu mobile */
+
+/* apertura nav izquierdo */
+
+.sticky {
+    position: sticky;
+    top: 1%;
+}
+
+.nav-secciones {
+    text-align: center;
+    margin: 3% 6%;
+    padding: 2%;
+    box-shadow: 0 0 10px 0;
+    border-radius: 5px;
+    background-color: rgba(0, 0, 0, 0.704);
+}
+
+.nav-secciones-ul {
+    margin: 0 auto;
+    padding: 0;
+    list-style-type: none;
+    text-align: center;
+    margin: auto;
+}
+
+.nav-secciones-li {
+    margin-bottom: 1rem;
+}
+
+.nav-secciones-enlace {
+    color: white;
+    font-size: 1.2rem;
+    transition: color 0.4s;
+}
+
+.nav-secciones-enlace:hover {
+    color: rgb(251, 207, 127);
+}
+
+.nav-subsecciones-ul {
+    padding: 0;
+    color: white;
+    list-style-type: none;
+    list-style-position: inside;
+    padding-top: 0.5rem;
+}
+
+.nav-subsecciones-li {
+    padding-top: 0.5rem;
+}
+
+.nav-subsecciones-enlace {
+    text-decoration: none;
+    color: white;
+    font-size: 0.9rem;
+    transition: color 0.4s;
+}
+
+.nav-subsecciones-enlace:hover {
+    color: rgb(251, 207, 127);
+}
+
+.enlaces-inferior-li:hover {
+    color: rgb(251, 207, 127);
+}
+
+/* nav izquierdo cierre */
+
+/* estructura main */
+
+.background-chess {
+    background-image: url(../assets/images/fondo-cuadricula.jpg);
+    background-repeat: repeat;
+}
+
+.cuerpo {
+    position: relative;
+    z-index: 500;
+    box-shadow: 0 -20px 20px 1px;
+}
+
+/* estructura main */
+
+/* estilos de imagen */
+
+.img-container {
+    text-align: center;
+    margin-bottom: 0.3rem;
+}
+
+.cuerpo img {
+    width: 80%;
+    max-width: 100%;
+    height: auto;
+    margin: 0 auto;
+    display: inline-block;
+    border: #333 2px solid;
+    box-shadow: 0 0 20px 3spx;
+}
+
+/* cierre estilos de imagen */
+
+/* estilos para textos y headliners */
+
+.encabezado {
+    margin: 0.5rem 0.8rem 0.5rem 0.8rem;
+}
+
+#titulo {
+    font-size: 3rem;
+}
+
+.subtitulo {
+    font-size: 1.8rem;
+    line-height: 2rem;
+}
+
+.sub-subtitulo {
+    font-size: 1.4rem;
+    margin: 1rem;
+}
+
+.cuerpo p {
+    font-size: 1.2rem;
+    font-weight: 400;
+    margin: 0.8rem 0.8rem;
+}
+
+.temas-link {
+    text-decoration: none;
+    color: rgb(150, 150, 150);
+}
+
+.temas-link:hover {
+    color: rgb(88, 88, 88);
+}
+
+.pie-foto {
+    margin: 0 auto;
+    font-weight: 300;
+    font-size: 1rem;
+    border-left: #cc2e43 solid 1px;
+    padding-left: 1rem;
+    width: 80%;
+}
+
+/* cierre estilos textos y headliners */
+
+/* footer para todas las páginas*/
+
+footer {
+    height: 20rem;
+    width: 100%;
+    background-color: rgb(90, 47, 19);
+    color: white;
+    box-shadow: inset 1px 1px 10px 1px black;
+}
+
+/* cierre footer */
+
 /* media queries */
 
 @media screen and (max-width: 1024px) {
+    .nav-subsecciones-ul {
+        display: none;
+    }
+
+    .temas-link {
+        font-size: 1.5rem;
+        padding: 0 0.5rem;
+    }
+
+    .quitar {
+        display: none;
+    }
 }
 
 @media screen and (max-width: 768px) {
+    .nav-secciones-enlace {
+        font-size: 1rem;
+    }
+    .nav-secciones {
+        display: none;
+    }
+
+    #nav-mobile {
+        display: block;
+    }
+
+    header {
+        display: none;
+    }
 }
 
-@media screen and (max-width: 600px) {
+@media screen and (max-width: 664px) {
 }
 
 @media screen and (max-width: 480px) {
