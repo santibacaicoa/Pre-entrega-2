@@ -18,6 +18,7 @@ body {
 header {
     z-index: 1000;
     position: relative;
+    width: 100%;
     height: fit-content;
     background-color: #333;
     color: white;
@@ -249,7 +250,7 @@ header {
 }
 
 .btn-submit:hover {
-    background: rgb(251, 207, 127);
+    background: rgb(255, 211, 129);
 }
 
 /* cierre pagina de contacto */
