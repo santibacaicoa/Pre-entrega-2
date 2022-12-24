@@ -4,10 +4,10 @@
     box-sizing: border-box;
     font-size: 16px;
     font-weight: 300;
+    font-family: Montserrat, Tahoma, sans-serif;
 }
 
 body {
-    font-family: Montserrat, Tahoma, sans-serif;
     font-size: 1rem;
     font-weight: 100;
     line-height: 1.6em;
@@ -137,18 +137,19 @@ header {
 .nav-secciones-enlace {
     color: white;
     font-size: 1.2rem;
-    transition: color 0.4s;
+    transition: all 0.4s;
+    text-decoration: none;
 }
 
 .nav-secciones-enlace:hover {
     color: rgb(251, 207, 127);
+    text-decoration: underline;
 }
 
 .nav-subsecciones-ul {
     padding: 0;
     color: white;
     list-style-type: none;
-    list-style-position: inside;
     padding-top: 0.5rem;
 }
 
@@ -179,9 +180,167 @@ header {
     position: relative;
     z-index: 500;
     box-shadow: 0 -20px 20px 1px;
+    background-color: rgb(255, 247, 233);
 }
 
 /*cierre estructura main */
+
+/* apertura pagina de piezas */
+
+/* slider */
+
+.espacio-slider {
+    padding: 1rem;
+    padding-bottom: 0;
+    margin: 2rem auto;
+    display: flex;
+    justify-content: space-between;
+}
+
+.container-all {
+    position: relative;
+    margin: 2rem;
+    max-width: 400px;
+    width: 100%;
+    border-radius: 6px;
+    overflow: hidden;
+}
+
+#cabecera-slider {
+    margin-bottom: 0.5rem;
+    padding: 0;
+    text-align: center;
+}
+
+.slide {
+    display: flex;
+    transform: translate3d(0, 0, 0);
+    transition: all 600ms;
+    animation-name: autoplay;
+    animation-duration: 6.5s;
+    animation-direction: alternate;
+    animation-fill-mode: forwards;
+    animation-iteration-count: infinite;
+}
+
+.item-slide {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    flex-shrink: 0;
+    flex-grow: 0;
+    max-width: 100%;
+}
+
+.pagination {
+    margin-bottom: 1.5rem;
+    position: absolute;
+    bottom: 20px;
+    left: 0;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+}
+
+.pagination-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    border: 2px solid white;
+    width: 30px;
+    height: 52px;
+    border-radius: 4px;
+    overflow: hidden;
+    cursor: pointer;
+    background: rgba(255, 255, 255, 0.5);
+    margin: 15px 12px;
+    text-align: center;
+    transition: all 300ms;
+}
+
+.pagination-item:hover {
+    transform: scale(2);
+}
+
+.pagination-item img {
+    display: inline-block;
+    max-width: none;
+    height: 100%;
+    transform: scale(1);
+    opacity: 0;
+    transition: all 300ms;
+}
+
+.pagination-item:hover img {
+    opacity: 1;
+    transform: scale(1);
+}
+
+input[id="slide-1"]:checked ~ .slide {
+    animation: none;
+    transform: translate3d(0, 0, 0);
+}
+
+input[id="slide-1"]:checked ~ .pagination .pagination-item[for="slide-1"] {
+    background-color: rgba(0, 0, 0, 0.7);
+}
+
+input[id="slide-2"]:checked ~ .slide {
+    animation: none;
+    transform: translate3d(calc(-100% * 1), 0, 0);
+}
+
+input[id="slide-2"]:checked ~ .pagination .pagination-item[for="slide-2"] {
+    background-color: rgba(0, 0, 0, 0.7);
+}
+
+input[id="slide-3"]:checked ~ .slide {
+    animation: none;
+    transform: translate3d(calc(-100% * 2), 0, 0);
+}
+
+input[id="slide-3"]:checked ~ .pagination .pagination-item[for="slide-3"] {
+    background-color: rgba(0, 0, 0, 0.7);
+}
+
+input[id="slide-4"]:checked ~ .slide {
+    animation: none;
+    transform: translate3d(calc(-100% * 3), 0, 0);
+}
+
+input[id="slide-4"]:checked ~ .pagination .pagination-item[for="slide-4"] {
+    background-color: rgba(0, 0, 0, 0.7);
+}
+
+input[id="slide-5"]:checked ~ .slide {
+    animation: none;
+    transform: translate3d(calc(-100% * 4), 0, 0);
+}
+
+input[id="slide-5"]:checked ~ .pagination .pagination-item[for="slide-5"] {
+    background-color: rgba(0, 0, 0, 0.7);
+}
+
+input[id="slide-6"]:checked ~ .slide {
+    animation: none;
+    transform: translate3d(calc(-100% * 5), 0, 0);
+}
+
+input[id="slide-6"]:checked ~ .pagination .pagination-item[for="slide-6"] {
+    background-color: rgba(0, 0, 0, 0.7);
+}
+
+/* cierre slider */
+
+.texto-piezas {
+    margin-top: 1.5rem;
+    flex-grow: 0;
+    flex-basis: 80rem;
+}
+
+/* cierre pagina de piezas */
 
 /* apertura pagina de contacto */
 
@@ -257,15 +416,20 @@ header {
 
 /* estilos de imagen */
 
-.img-container {
+.piezas-img {
+    max-width: 100%;
+}
+
+.container-img {
     text-align: center;
     margin-bottom: 0.3rem;
 }
 
-.cuerpo img {
+.img-index {
     width: 80%;
     max-width: 100%;
     height: auto;
+    max-height: 600px;
     margin: 0 auto;
     display: inline-block;
     border: #333 2px solid;
@@ -301,8 +465,9 @@ header {
 
 .cuerpo p {
     font-size: 1.2rem;
-    font-weight: 400;
+    font-weight: 300;
     margin: 0.8rem 0.8rem;
+    font-family: Roboto;
 }
 
 .temas-link {
@@ -323,16 +488,95 @@ header {
     width: 80%;
 }
 
+.padding-texto {
+    padding: 0 6rem;
+}
+
 /* cierre estilos textos y headliners */
 
 /* footer para todas las páginas*/
 
 footer {
-    height: 20rem;
     width: 100%;
-    background-color: rgb(90, 47, 19);
+    padding: 50px 0px;
+    background-size: cover;
+    background-color: rgb(117, 69, 36);
+    box-shadow: inset 0 0 30px 5px;
+}
+
+.container__footer {
+    display: flex;
+    flex-wrap: nowrap;
+    justify-content: space-between;
+    max-width: 1200px;
+    margin: auto;
+    margin-top: 100px;
+}
+
+.box__footer {
+    display: flex;
+    flex-direction: column;
+    padding: 40px;
+}
+
+.box__footer .logo {
+    text-align: center;
+}
+
+.box__footer .logo img {
+    width: 180px;
+    transition: all 0.6s;
+}
+
+.box__footer .logo img:hover {
+    width: 240px;
+}
+
+.box__footer .terms {
+    max-width: 350px;
+    margin-top: 20px;
+    font-weight: 500;
     color: white;
-    box-shadow: inset 1px 1px 10px 1px black;
+    font-size: 18px;
+}
+
+.box__footer h2 {
+    margin-bottom: 30px;
+    color: white;
+    font-weight: 700;
+}
+
+.box__footer a {
+    margin-top: 10px;
+    color: white;
+    font-weight: 600;
+    text-decoration: none;
+}
+
+.box__footer a:hover {
+    color: rgb(251, 207, 127);
+}
+
+.box__footer a .fab {
+    font-size: 20px;
+}
+
+.box__copyright {
+    max-width: 1200px;
+    margin: auto;
+    text-align: center;
+    padding: 0px 40px;
+}
+
+.box__copyright p {
+    margin-top: 20px;
+    color: white;
+}
+
+.box__copyright hr {
+    border: none;
+    height: 1px;
+    background-color: white;
 }
 
 /* cierre footer */
@@ -351,6 +595,15 @@ footer {
 
     .quitar {
         display: none;
+    }
+
+    .espacio-slider {
+        display: block;
+        text-align: center;
+    }
+
+    .container-all {
+        margin: auto;
     }
 }
 
